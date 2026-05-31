@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEvento.Views.Cadastro"
+             Title="Cadastro"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Primary}">
+    <VerticalStackLayout VerticalOptions="Center">
+        
+        <Frame >
+           
+            <VerticalStackLayout>
+                <Label 
+                    Text="Cadastro de Evento"
+                    VerticalOptions="Center" 
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Margin="10,10,10,30" />
+                
+                <Entry x:Name="Evento"
+                    Placeholder="Digite o nome do evento"
+                    Margin="10,10,10,10" />
+                
+                <HorizontalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Inicio"/>
+                        <DatePicker x:Name="dtp_inicio"
+                                    Format="dd/MM/yyyy"
+                                    DateSelected="dtp_inicio_DateSelected"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Término"/>
+                        <DatePicker x:Name="dtp_termino"
+                                    Format="dd/MM/yyyy"/>
+                    </VerticalStackLayout>
+                    
+                </HorizontalStackLayout>
+                
+                <Entry x:Name="Participantes"
+                    Placeholder="Numero de Participantes"
+                    Margin="10,10,10,10" />
+
+                <Entry x:Name="Local"
+                    Placeholder="Local do Evento"
+                    Margin="10,10,10,10" />
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="Custo por Participante"/>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Label Text="R$"/>
+                        <Entry x:Name="ValorParticipante"
+                            Placeholder="0,00"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <Button Text="Avançar"
+                        Clicked="Button_Clicked"
+                        Margin="10,10,10,0"/>
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

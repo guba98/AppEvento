@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEvento.Views.Calculo"
+             Title="Calculo">
+    <Frame Margin="20">
+        <VerticalStackLayout Scale=" 1.3">
+            <Label Text="{Binding NomeEvento}"
+                   FontSize="30"
+                   Margin="20" />
+            <HorizontalStackLayout >
+                <Label Text="Local: "
+                       Margin="10"/>
+                <Label Text="{Binding Localizacao}"
+                       Margin="10"/>
+            </HorizontalStackLayout>
+            
+            <VerticalStackLayout Margin="20" Scale=" 1.3">
+                <Label Text="Dias de Evento:"/>
+                <HorizontalStackLayout Margin="0">
+                    <Label Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                    <Label Text="até" Margin="10,0,10,0"/>
+                    <Label Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                </HorizontalStackLayout>
+                <Label Text="{Binding Duracao, StringFormat='Duração: {0} dias'}" />
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Margin="20">
+                <Label Text="{Binding NumeroPart, StringFormat='Numero de participantes: {0} '}"/>
+                <Label Text="{Binding ValorPart, StringFormat='Valor por participante: R$ {0:F2}'}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="20" Scale="1.5">
+                <Label Text="Valor total do evento"/>
+                <Label Text="{Binding CustoTotal, StringFormat='R$ {0:F2}'}"
+                       FontAttributes="Bold"
+                       FontSize="30"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        
+    </Frame>
+</ContentPage>
